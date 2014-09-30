@@ -20,7 +20,7 @@
 // ----------------------------------------------------------------------------
 
 #include "Exception.hh"
-#include "PrettyDebug.hh"
+//#include "PrettyDebug.hh"
 #include <assert.h>
 #include <sstream>
 #include <cstdlib>
@@ -189,7 +189,7 @@ long RTI::UnableToPerformSave::type = certi::e_UnableToPerformSave ;
 long RTI::ValueCountExceeded::type = certi::e_ValueCountExceeded ;
 long RTI::ValueLengthExceeded::type = certi::e_ValueLengthExceeded ;
 
-static PrettyDebug PD_RTIException("RTI_EXCEPTION",__FILE__);
+//static PrettyDebug PD_RTIException("RTI_EXCEPTION",__FILE__);
 
 RTI::Exception::~Exception()
 {
@@ -246,7 +246,7 @@ const std::string RTI::Exception::displayMe() const
     msg << std::endl;
     msg << std::flush;
 
-    Debug(PD_RTIException, pdExcept) << msg.str();
+    //Debug(PD_RTIException, pdExcept) << msg.str();
     return msg.str();
 }
 

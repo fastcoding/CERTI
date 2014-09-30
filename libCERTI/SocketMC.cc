@@ -24,6 +24,7 @@
 # include "SocketTCP.hh"
 #else
 # include <arpa/inet.h>
+#include <unistd.h>
 #endif
 
 #include <cassert>
@@ -53,8 +54,8 @@ if (_est_init_mc)
 		 closesocket(_socket_mc);
 		 closesocket(_socket_emetteur);
 	#else
-		 ::close(_socket_mc);
-		 ::close(_socket_emetteur);
+         ::close(_socket_mc);
+         ::close(_socket_emetteur);
 	#endif
 	_est_init_mc = false ;
 	}

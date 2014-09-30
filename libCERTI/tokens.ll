@@ -34,6 +34,8 @@
 #endif
 #ifdef _WIN32
 #define isatty(fid) 0
+#else
+#include <unistd.h>
 #endif
 
 

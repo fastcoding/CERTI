@@ -24,7 +24,6 @@
 #include "certi.hh"
 #include "fedtime.hh"
 #include "FedTimeD.hh"
-
 #include <algorithm>
 #include <limits>
 #include <sstream>

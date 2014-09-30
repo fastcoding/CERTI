@@ -33,7 +33,7 @@ namespace rti1516
 
 namespace std
 {
-  template <class T> class auto_ptr;
+  //template <class T> class auto_ptr;
 }
 
 #include <RTI/SpecificConfig.h>

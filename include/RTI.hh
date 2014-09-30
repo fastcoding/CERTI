@@ -3,7 +3,7 @@
 
 #ifndef RTI_hh
 #define RTI_hh
-
+#include "RTI/Exception.h"
 #if defined(_WIN32)
 	#pragma warning(disable: 4290)
 	#pragma warning(disable: 4275)

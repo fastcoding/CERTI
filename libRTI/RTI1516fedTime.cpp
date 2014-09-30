@@ -6,7 +6,7 @@
 #include <memory>
 #include <cstdlib>
 #include <cstring>
-
+#include "RTI/Exception.h"
 #include "RTI1516fedTime.h"
 
 #include "certi.hh"

@@ -140,7 +140,7 @@ struct __swap<T,8>
 };
 
 // HLA basic type, represented by <T> type stored in <S> using <E> encoding.
-template<class T, class S, template<class T>class E>
+template<class T, class S, template<class X > class E >
 struct HLAbasicType
 {
     HLAbasicType& operator = (const T& data)
@@ -178,7 +178,7 @@ struct HLAbasicType
     static const bool m_isVariable = false;
 };
 
-template<class T, class S, template<class T>class E>
+template<class T, class S, template<class X> class E>
 std::ostream& PrintBuffer(std::ostream& stream, HLAbasicType<T,S,E>& buffer)
 { return __print_buffer(stream, (void*)&buffer, buffer.__sizeof()); }
 

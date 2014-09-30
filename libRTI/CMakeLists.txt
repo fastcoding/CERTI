@@ -110,6 +110,7 @@ ENDIF(CMAKE_COMPILER_IS_GNUCXX)
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/libHLA)
 SET(FEDTIME_SRCS
     RTIfedTime.cc
+    ${CMAKE_SOURCE_DIR}/libRTI/RTItypes.cc
     ${CMAKE_SOURCE_DIR}/include/fedtime.hh
 )
 
@@ -142,9 +143,10 @@ SET(FEDTIME1516_SRCS
     ../include/RTI/certiLogicalTime.h
     ../include/RTI/certiLogicalTimeInterval.h
     ../include/RTI/certiLogicalTimeFactory.h
+    ../include/RTI/Exception.h
+    RTI1516exception.cpp
     RTI1516fedTime.h
     RTI1516fedTime.cpp
-
 )
 IF (BUILD_WITH_EXTRA_LOGICAL_TIME)
    LIST(APPEND FEDTIME1516_SRC

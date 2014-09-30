@@ -28,7 +28,7 @@ namespace rti1516
     virtual
       ~Exception();
       // throw();
-    
+
     virtual
       std::wstring what() const
       throw() = 0;

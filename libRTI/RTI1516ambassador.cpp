@@ -12,7 +12,7 @@
 //#include "RTItypesImp.hh"
 #include "RTI1516HandleFactory.h"
 #include "RTI1516fedTime.h"
-
+#include <memory>
 #include <algorithm>
 
 namespace {
@@ -179,7 +179,7 @@ namespace rti1516
 			rti1516::RTIinternalError)
 	{
 		M_Tick_Request vers_RTI;
-		std::auto_ptr<Message> vers_Fed(NULL);
+        std::auto_ptr< Message > vers_Fed(NULL);
 
 		// Request callback(s) from the local RTIA
 		vers_RTI.setMultiple(multiple);
@@ -199,7 +199,7 @@ namespace rti1516
 		// Read response(s) from the local RTIA until Message::TICK_REQUEST is received.
 		while (1) {
 			try {
-				vers_Fed.reset(M_Factory::receive(privateRefs->socketUn));
+                vers_Fed.reset(M_Factory::receive(privateRefs->socketUn));
 			}
 			catch (NetworkError &e) {
 				std::stringstream msg;
@@ -1645,7 +1645,7 @@ namespace rti1516
 
 		//TODO JRE: goed testen of deze return value wel klopt!
 		certi::FederationTime fedTime = rep.getDate();
-		if (fedTime == NULL || fedTime.getTime() == 0) {
+        if (fedTime.getTime() == 0) {
 			return false;
 		}	
 
@@ -1684,7 +1684,7 @@ namespace rti1516
 
 		//TODO JRE: goed testen of deze return value wel klopt!
 		certi::FederationTime fedTime = rep.getDate();
-		if (fedTime == NULL || fedTime.getTime() == 0) {
+        if (/*fedTime == NULL || */ fedTime.getTime() == 0) {
 			return false;
 		}
 		// JvY: TODO Controleren of dit blijft werken met andere tijdsimplementaties

@@ -18,6 +18,9 @@
 // ----------------------------------------------------------------------------
 
 #include "certi.hh"
+#ifndef _WIN32
+#include <unistd.h>
+#endif
 #include "SocketUN.hh"
 #include "SocketTCP.hh"
 
@@ -43,7 +46,7 @@ static PrettyDebug G("GENDOC",__FILE__);
 #ifndef _WIN32
 static void closesocket(int fd)
 {
-  close(fd);
+  ::close(fd);
 }
 #endif
 

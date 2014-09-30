@@ -17,6 +17,7 @@ enum Boolean {
     RTI_TRUE
 };
 
+
 class RTI_EXPORT Exception
 {
 public:
@@ -47,3 +48,4 @@ public: \
     void throwSelf() const { throw *this ; } \
     long getType() {return type;}; \
 };
+

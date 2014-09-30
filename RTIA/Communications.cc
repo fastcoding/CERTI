@@ -27,7 +27,9 @@
 #include "PrettyDebug.hh"
 #include "NM_Classes.hh"
 #include "M_Classes.hh"
-
+#ifndef _WIN32
+#include <sys/select.h>
+#endif
 #include "SocketHTTPProxy.hh"
 #include "SecureTCPSocket.hh"
 
